@@ -1,0 +1,125 @@
+Metadata-Version: 2.1
+Name: niftystocks
+Version: 0.1.2
+Summary: A small package that helps you in fetching list of specific set of stocks as a list. This package can also fetch the stocks as a string.
+Home-page: UNKNOWN
+Author: Dr. Kumar B V
+Author-email: kumar.bv@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Package niftystocks
+Date: 10-Jan-2022
+
+## Installation
+
+Use the following for importing: ```from niftystocks import ns```
+
+## Features
+This application will allow you to get the list of stocks in National Stock Exchange (NSE) India that is belonging to different themes such as Nifty 50, Nifty Next 50, Nifty Auto, Nifty IT, Nifty Pharma. You can extract the theme list as is, or with .NS suffix. For example, for Infosys, the NSE stock symbol is ```"INFY"``` and with .NS suffix, it is ```"INFY.NS"```. The methods are also appropriately named. For example,
+
+```get_nifty_it()``` method yields list of Nifty IT stocks - ```['MPHASIS', 'OFSS', 'WIPRO', 'INFY', 'LTI', 'TCS', 'MINDTREE', 'HCLTECH', 'COFORGE', 'TECHM']```
+
+Whereas,
+
+```get_nifty_energy_with_ns()``` method yields list of Nifty energy stocks with .NS suffix on each stock - ```['ADANIGREEN.NS', 'IOC.NS', 'TATAPOWER.NS', 'POWERGRID.NS', 'ONGC.NS', 'BPCL.NS', 'HINDPETRO.NS', 'RELIANCE.NS', 'GAIL.NS', 'NTPC.NS']```
+
+Depending on your requirement, you can invoke appropriate method. The former method will help in fetching data from, for example, ```yfinance``` package. You can use these stocks for performing stock portfolio optmimzation, stock price prediction etc. 
+
+The download() method of yfinance requires tickers as a strings of stock symbols separated by a space. To enable input to this method, you can pass 'string' as a parameter to any of the methods, and the result is a string of symbols, separated by a space. 
+
+```get_nifty_it('string')``` method yields a string of Nifty IT stocks - ```MPHASIS OFSS WIPRO INFY LTI TCS MINDTREE HCLTECH COFORGE TECHM' ```.
+
+```get_nifty_energy_with_ns('string')``` method yields string of Nifty energy stocks with .NS suffix on each stock - ```ADANIGREEN.NS IOC.NS TATAPOWER.NS POWERGRID.NS ONGC.NS BPCL.NS HINDPETRO.NS RELIANCE.NS GAIL.NS NTPC.NS```
+## Example Usage
+
+```ns.get_nifty_50()``` results in a list of strings
+
+```ns.get_nifty_50_with_ns()``` results in a list of strings
+
+```ns.get_nifty_50_with_ns('string')``` results in a string
+
+
+## Methods Available
+
+Following are the available methods:
+
+```get_nifty200_with_ns()``` fetches a list of Nifty 200 stocks with .NS suffix.
+```get_nifty200()``` fetches a list of Nifty 200 stocks.
+
+```get_nifty500_with_ns()``` fetches a list of Nifty 500 stocks with .NS suffix.
+```get_nifty500()``` fetches a list of Nifty 500 stocks.
+
+```get_nifty50_with_ns()``` fetches a list of Nifty 50 stocks with .NS suffix.
+```get_nifty50()``` fetches a list of Nifty 50 stocks.
+
+```get_nifty100_with_ns()``` fetches a list of Nifty 100 stocks with .NS suffix.
+```get_nifty100()```  fetches a list of Nifty 100 stocks.
+
+```get_nifty_auto_with_ns()``` fetches a list of Nifty Auto stocks with .NS suffix.
+```get_nifty_auto()``` fetches a list of Nifty 100 stocks.
+
+```get_nifty_energy_with_ns()``` fetches a list of Nifty Energy stocks with .NS suffix.
+```get_nifty_energy()``` fetches a list of Nifty Energy stocks.
+
+```get_nifty_financial_services_with_ns()``` fetches a list of Nifty Financial Services stocks with .NS suffix.
+```get_nifty_financial_services()``` fetches a list of Nifty Financial Services stocks.
+
+```get_nifty_fmcg_with_ns()``` fetches a list of Nifty FMCG stocks with .NS suffix.
+```get_nifty_fmcg()``` fetches a list of Nifty FMCG stocks.
+
+```get_nifty_it_with_ns()``` fetches a list of Nifty IT stocks with .NS suffix.
+```get_nifty_it()``` fetches a list of Nifty IT stocks.
+
+```get_nifty_large_midcap250_with_ns()``` fetches a list of Nifty Large Midcap 250 stocks with .NS suffix.
+```get_nifty_large_midcap250()``` fetches a list of Nifty Large Midcap 250 stocks.
+
+```get_nifty_media_with_ns()``` fetches a list of Nifty Media stocks with .NS suffix.
+```get_nifty_media()``` fetches a list of Nifty Media stocks.
+
+```get_nifty_metal_with_ns()``` fetches a list of Nifty Metal stocks with .NS suffix.
+```get_nifty_metal()``` fetches a list of Nifty Metal stocks.
+
+```get_nifty_midcap50_with_ns()``` fetches a list of Nifty Midcap 50 stocks with .NS suffix.
+```get_nifty_midcap50()``` fetches a list of Nifty Midcap 50 stocks.
+
+```get_nifty_midcap100_with_ns()``` fetches a list of Nifty Midcap 100 stocks with .NS suffix.
+```get_nifty_midcap100()```  fetches a list of Nifty Midcap 100 stocks.
+
+```get_nifty_midcap150_with_ns()``` fetches a list of Nifty Midcap 150 stocks with .NS suffix.
+```get_nifty_midcap150()``` fetches a list of Nifty Midcap 150 stocks.
+
+```get_nifty_mid_smallcap400_with_ns()``` fetches a list of Nifty Mid Smallcap 400 stocks with .NS suffix.
+```get_nifty_mid_smallcap400()``` fetches a list of Nifty Mid Smallcap 400 stocks.
+
+```get_nifty_next50_with_ns()``` fetches a list of Nifty Next 50 stocks with .NS suffix.
+```get_nifty_next50()``` fetches a list of Nifty Next 50 stocks.
+
+```get_nifty_pharma_with_ns()``` fetches a list of Nifty Pharma stocks with .NS suffix.
+```get_nifty_pharma()``` fetches a list of Nifty Pharma stocks.
+
+```get_nifty_private_bank_with_ns()``` fetches a list of Nifty Private Bank stocks with .NS suffix.
+```get_nifty_private_bank()``` fetches a list of Nifty Private Bank stocks.
+
+```get_nifty_psu_bank_with_ns()``` fetches a list of Nifty PSU Bank stocks with .NS suffix.
+```get_nifty_psu_bank()``` fetches a list of Nifty PSU Bank stocks
+
+```get_nifty_realty_with_ns()``` fetches a list of Nifty Realty stocks with .NS suffix.
+```get_nifty_realty()``` fetches a list of Nifty Realty stocks.
+
+```get_nifty_smallcap50_with_ns()``` fetches a list of Nifty Smallcap 50 stocks with .NS suffix.
+```get_nifty_smallcap50()``` fetches a list of Nifty Smallcap 50 stocks.
+
+```get_nifty_smallcap100_with_ns()``` fetches a list of Nifty Smallcap 100 stocks with .NS suffix.
+```get_nifty_smallcap100()``` fetches a list of Nifty Smallcap 100 stocks.
+
+```get_nifty_smallcap250_with_ns()``` fetches a list of Nifty Smallcap 250 stocks with .NS suffix.
+```get_nifty_smallcap250_with_ns()``` fetches a list of Nifty Smallcap 250 stocks.
+
+

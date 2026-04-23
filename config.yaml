@@ -1,0 +1,32 @@
+# Midcap Screener — configuration
+# All capital figures in INR. Edit these; the modules read them via yaml.safe_load.
+
+capital: 500000         # Total capital deployed to this strategy (INR)
+risk_per_trade: 0.02    # Max capital at risk per idea (2%)
+max_positions: 5        # Concurrent open trades
+portfolio_stop: 0.06    # Pause strategy if book drawdown >= 6% in a month
+
+thresholds:
+  min_liquidity_cr: 25  # 20-day avg traded value must clear ₹25 cr
+  min_score: 70         # Composite score (out of 100) needed to appear in shortlist
+
+sizing:
+  atr_stop_mult: 1.5
+  atr_target_mult: 3.0
+  max_position_pct: 0.20  # No single name > 20% of capital
+
+exits:
+  time_stop_bars: 20      # Close after 20 trading sessions regardless of P&L
+  trailing_activate_gain: 0.04
+  trailing_atr_mult: 1.0
+
+backtest:
+  start: "2021-01-01"
+  end:   "2026-04-01"
+  cost_per_side: 0.002    # ~0.2% round-trip per side (brokerage + STT + slippage)
+  walk_forward_train_years: 2
+  walk_forward_test_months: 6
+
+paths:
+  cache_dir: ".cache"
+  reports_dir: "reports_out"

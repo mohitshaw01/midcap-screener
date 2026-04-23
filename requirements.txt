@@ -1,0 +1,10 @@
+# Core deps for the screener to run against live data.
+pandas>=2.0
+numpy>=1.24
+pyyaml>=6.0
+pyarrow>=14.0          # parquet cache
+yfinance>=0.2.40       # free OHLCV for NSE tickers (.NS suffix)
+niftystocks>=0.1.2     # live Nifty Midcap 150 constituent list
+
+# Dev / testing only — not required at runtime.
+# pytest>=7.4
