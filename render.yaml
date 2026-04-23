@@ -1,0 +1,36 @@
+# render.yaml — deploy to Render.com (free tier)
+# Push this repo to GitHub, then connect it on Render dashboard.
+
+services:
+  - type: web
+    name: midcap-screener
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn webapp.app:app -c gunicorn.conf.py
+    envVars:
+      - key: SCREENER_DB
+        value: /opt/render/project/src/screener.db
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false      # set manually in Render dashboard
+      - key: TELEGRAM_CHAT_ID
+        sync: false
+      - key: PYTHON_VERSION
+        value: "3.11"
+    autoDeploy: true
+
+  # Cron job: runs the screener at 4:30 PM IST (11:00 UTC) on weekdays
+  - type: cron
+    name: midcap-daily-run
+    runtime: python
+    plan: free
+    schedule: "0 11 * * 1-5"    # 11:00 UTC = 16:30 IST
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m webapp.scheduler
+    envVars:
+      - key: SCREENER_DB
+        value: /opt/render/project/src/screener.db
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false

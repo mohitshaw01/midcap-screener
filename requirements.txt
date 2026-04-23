@@ -6,5 +6,10 @@ pyarrow>=14.0          # parquet cache
 yfinance>=0.2.40       # free OHLCV for NSE tickers (.NS suffix)
 niftystocks>=0.1.2     # live Nifty Midcap 150 constituent list
 
+# Web dashboard
+flask>=3.0
+gunicorn>=22.0         # production WSGI server
+apscheduler>=3.10      # scheduled daily screener runs
+
 # Dev / testing only — not required at runtime.
 # pytest>=7.4
