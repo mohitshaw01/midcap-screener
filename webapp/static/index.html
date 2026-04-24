@@ -176,7 +176,7 @@ async function fetchData() {
       <div class="empty">
         <div class="empty-icon">📡</div>
         <h3>No data yet</h3>
-        <p>Run the screener first: <code style="color:var(--green)">python -m webapp.scheduler</code>, then refresh this page.</p>
+        <p>Run the screener first: Click the button below to run the screener (~5 min).</p><br><button onclick="fetch('/api/run',{method:'POST'}).then(()=>{this.textContent='Running... refresh in 5 min';this.disabled=true;setTimeout(()=>location.reload(),300000)})" style="background:#10b981;color:#000;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer">Run Screener Now</button></p>
       </div>`;
   }
 }
