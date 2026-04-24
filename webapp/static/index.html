@@ -300,5 +300,9 @@ function switchTab(t) { state.tab = t; render(); }
 fetchData();
 setInterval(fetchData, 60000);
 </script>
+
+<div id="run-panel" style="position:fixed;bottom:20px;right:20px;z-index:999">
+<button onclick="fetch('/api/run',{method:'POST'}).then(()=>{this.textContent='Running...';this.disabled=true;setTimeout(()=>location.reload(),300000)})" style="background:#10b981;color:#000;border:none;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 4px 20px rgba(16,185,129,0.3)">Run Screener Now</button>
+</div>
 </body>
 </html>
